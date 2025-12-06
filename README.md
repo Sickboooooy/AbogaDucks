@@ -1,52 +1,63 @@
-# AbogaDuck - Test Vocacional Jurídico
+# 🦆 AbogaDucks
 
-## Descripción
-AbogaDuck es una plataforma de evaluación vocacional jurídica diseñada para estudiantes de Derecho en México. La aplicación utiliza un algoritmo de compatibilidad para determinar qué áreas del derecho son más adecuadas según las aptitudes, valores y preferencias del usuario.
+**AbogaDucks** is an interactive vocational test application designed for law students in Mexico. It helps students discover their ideal legal profile through a series of situational, aptitude, and value-based questions, rewarding them with a unique procedure-generated "AbogaDuck" character.
 
-## Características principales
+## ✨ Features
 
-### Test Vocacional Jurídico
-- 50 preguntas organizadas en 3 secciones (Situacionales, Aptitudes, Valores)
-- Evaluación de 10 dimensiones clave para profesionales del derecho
-- Algoritmo de compatibilidad con 12 perfiles jurídicos diferentes
-- Visualización de resultados mediante gráficos de radar 
-- Recomendaciones personalizadas según perfil
+- **Vocational Test**: A complete 50-question instrument covering Situations, Aptitudes, and Values.
+- **Profiling Engine**: Scores users across 12 legal profiles (e.g., Penal, Civil, Constitutional) and 10 dimensions.
+- **Data Visualization**: Interactive Radar Chart showing personal strengths.
+- **AI-Powered Avatars**: Integration with **Google Gemini 1.5 Flash** to generate unique, personalized descriptions for each user's AbogaDuck.
+- **Responsive Design**: Modern UI built with Tailwind CSS and Shadcn/UI animations.
 
-### Generador de AbogaDucks
-- Generación de imágenes personalizadas de patos abogados con DALL-E 3
-- 12 especialidades jurídicas diferentes con prompts específicos
-- Sistema de límites de uso (3 generaciones diarias para usuarios no premium)
-- Gestión de suscripciones premium para uso ilimitado
-- Biblioteca personal de generaciones previas
+## 🛠️ Tech Stack
 
-## Tecnologías
-- **Frontend**: React 18, TypeScript, TailwindCSS, Shadcn/UI
-- **Visualización**: Chart.js, HTML Canvas
-- **Backend**: Express, Node.js, OpenAI API v4.93.0
-- **Almacenamiento**: PostgreSQL (opcional), almacenamiento en memoria
-- **Optimización**: Lazy-loading, memoización, Suspense, caché de generación
+- **Frontend**: React, TypeScript, Vite, Wouter (Routing), TanStack Query, Recharts.
+- **Backend**: Express.js (Node.js).
+- **AI**: Google Generative AI (Gemini 1.5 Flash).
+- **Styling**: Tailwind CSS, Shadcn/UI.
 
-## Instalación y uso
+## 🚀 Getting Started
 
-### Requisitos
-- Node.js 18+
-- API Key de OpenAI para generación de imágenes
+### Prerequisites
 
-### Configuración
-1. Clonar el repositorio
-2. Instalar dependencias: `npm install`
-3. Configurar variables de entorno en `.env`:
+- Node.js (v18+)
+- A [Google Gemini API Key](https://aistudio.google.com/)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Sickboooooy/AbogaDucks.git
+   cd AbogaDucks
    ```
-   OPENAI_API_KEY=tu_clave_api
-   DATABASE_URL=url_base_datos (opcional)
+
+2. **Install dependencies**
+   ```bash
+   npm install
    ```
-4. Iniciar el servidor: `npm run dev`
 
-## Estructura del proyecto
-- `client/src/`: Código fuente del frontend
-- `server/`: API y lógica de backend
-- `shared/`: Esquemas y tipos compartidos
-- `public/`: Archivos estáticos y recursos
+3. **Configure Environment**
+   Create a `.env` file in the root directory:
+   ```env
+   GEMINI_API_KEY=your_actual_api_key_here
+   ```
 
-## Desarrollado por
-Itosturre LegalTech & ProfesorDuck - 2025
+4. **Run the Application**
+   ```bash
+   npm run dev
+   ```
+   The application will be available at `http://localhost:5000`.
+
+## 📂 Project Structure
+
+- `client/`: React frontend application.
+- `server/`: Express backend API and AI integration logic.
+- `shared/`: Shared TypeScript schemas and the 50-question database.
+
+## 🤝 Contribution
+
+This project was built as an academic tool. Pull requests are welcome to expand the question bank or add new visual traits to the ducks!
+
+---
+*Created by [Your Name] for [Institution Name]*

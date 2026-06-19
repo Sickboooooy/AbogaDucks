@@ -4,3 +4,8 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+
+# Variables de entorno y secretos (NUNCA versionar)
+.env
+.env.*
+!.env.example

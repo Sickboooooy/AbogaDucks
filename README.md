@@ -4,7 +4,7 @@
 
 ## ✨ Features
 
-- **Vocational Test**: A complete 50-question instrument covering Situations, Aptitudes, and Values.
+- **Vocational Test**: An agile 30-question instrument (under 4 min) covering Situations, Aptitudes, and Values.
 - **Profiling Engine**: Scores users across 12 legal profiles (e.g., Penal, Civil, Constitutional) and 10 dimensions.
 - **Data Visualization**: Interactive Radar Chart showing personal strengths.
 - **AI-Powered Avatars**: Integration with **Google Gemini 1.5 Flash** to generate unique, personalized descriptions for each user's AbogaDuck.

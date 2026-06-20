@@ -9,3 +9,6 @@ vite.config.ts.*
 .env
 .env.*
 !.env.example
+
+# Logs de runtime
+*.log

@@ -1,6 +1,6 @@
+import "dotenv/config";
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
-import "dotenv/config";
 
 const app = express();
 app.use(express.json());
@@ -66,7 +66,7 @@ app.use((req, res, next) => {
     console.log("Production serving not yet implemented in this scaffold");
   }
 
-  const PORT = 5000;
+  const PORT = Number(process.env.PORT) || 5000;
   server.listen(PORT, "0.0.0.0", () => {
     console.log(`serving on port ${PORT}`);
   });

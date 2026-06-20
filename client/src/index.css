@@ -4,33 +4,93 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    /* Fondo cálido marfil + texto navy profundo */
+    --background: 40 38% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
+    /* Navy de confianza jurídica */
+    --primary: 224 64% 33%;
+    --primary-foreground: 40 38% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217 91% 96%;
+    --secondary-foreground: 224 64% 27%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 20% 95%;
+    --muted-foreground: 215 20% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Amber pato */
+    --accent: 38 92% 50%;
+    --accent-foreground: 224 64% 18%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 38% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
+    --border: 220 18% 90%;
+    --input: 220 18% 90%;
+    --ring: 224 64% 33%;
+    --radius: 1.25rem;
+
+    /* Radar / charts */
+    --chart-1: 224 64% 33%;
+    --chart-2: 38 92% 50%;
+    --chart-3: 199 89% 48%;
+    --chart-4: 142 71% 45%;
+    --chart-5: 280 65% 60%;
+  }
+}
+
+@layer base {
+  /* Base 18px (en vez de 16px) para mejor lectura en pantallas grandes.
+     Escala toda la UI proporcionalmente sin romper los breakpoints. */
+  html {
+    font-size: 112.5%;
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "ss01";
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  /* Tarjeta base estilo "clay" suave */
+  .surface {
+    @apply rounded-3xl border border-slate-100 bg-white shadow-card;
+  }
+
+  /* Botón CTA pato (alto contraste: texto navy sobre amber) */
+  .btn-duck {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-b from-brand-amber-light to-brand-amber
+           px-7 py-3.5 font-heading font-semibold text-brand-navy-deep shadow-soft
+           transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0
+           focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-300/60 cursor-pointer;
+  }
+
+  /* Blobs decorativos de fondo */
+  .blob {
+    @apply pointer-events-none absolute rounded-full blur-3xl opacity-60 animate-blob-drift;
+  }
+}
+
+/* Respeta la preferencia de menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

@@ -1,5 +1,7 @@
 import "dotenv/config";
-import express, { type Request, Response, NextFunction } from "express";
+import express, { type Express, type Request, type Response, type NextFunction } from "express";
+import type { Server } from "http";
+import rateLimit from "express-rate-limit";
 import { registerRoutes } from "./routes";
 
 const app = express();
@@ -81,8 +83,16 @@ async function setupVite(app: Express, server: Server) {
 
   app.use(viteServer.middlewares);
   
+  // Límite de peticiones para la ruta que lee index.html del disco (CodeQL: missing rate limiting)
+  const limitadorSpa = rateLimit({
+    windowMs: 60 * 1000,
+    limit: 300,
+    standardHeaders: "draft-7",
+    legacyHeaders: false,
+  });
+
   // Serve index.html for SPA
-  app.use("*", async (req, res, next) => {
+  app.use("*", limitadorSpa, async (req, res, next) => {
     if (req.path.startsWith("/api")) return next();
     
     try {

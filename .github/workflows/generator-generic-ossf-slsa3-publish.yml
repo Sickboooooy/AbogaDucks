@@ -16,6 +16,10 @@ on:
   release:
     types: [created]
 
+# Permisos mínimos por defecto; el job de provenance declara los suyos
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
